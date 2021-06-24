@@ -41436,7 +41436,7 @@ html:not(.lt-ie10) .not-animated {
 .rd-navbar-fixed .rd-navbar-brand {
     position: fixed;
     top: 10px;
-    left: 64px;
+    left: 110px;
     z-index: 17;
     display: block;
     overflow: hidden;
