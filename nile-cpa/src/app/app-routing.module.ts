@@ -21,57 +21,26 @@ import { TaxComponent } from './tax/tax.component';
 
 const routes: Routes = [
 
-  { path:'', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
-  { path: 'about', component: AboutComponent},
-  { path: 'resources', component: ResourcesComponent},
-  {path:'tax-due-dates', component: TaxDueDateComponent },
-  {path:'irs-forms', component: IrsFormsComponent},
-  
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'resources', component: ResourcesComponent },
+  { path: 'tax-due-dates', component: TaxDueDateComponent },
+  { path: 'irs-forms', component: IrsFormsComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'services', component: ServicesComponent },
+  {path: 'tax', component: TaxComponent},
+  {path: 'irs-problem', component: IrsProblemComponent},
+  {path: 'small-business', component: SmallBusinessComponent},
+  {path: 'litigation-support', component: LitigationSupportComponent},
+  {path: 'compilation-reviews', component: CompilationReviewsComponent},
+  {path: 'individual-tax', component: IndividualTaxComponent},
+  {path: 'irs-representation', component: IrsRepresentationComponent},
+  {path: 'non-profit', component: NonProfitComponent},
+  {path: 'conflict-of-interest', component: ConflictOfInterestComponent},
+  {path: 'form-definitions', component: FormDefinitionsComponent}
 
-  { path: 'contacts', component: ContactsComponent},
-  { path: 'blog', component: BlogComponent},
-  { path: 'services', component: ServicesComponent,
-  children: [
-    {
-      path:'tax', component: TaxComponent,
-      children: [
-        {
-          path:'irs-problem', component: IrsProblemComponent
-        }
-      ]
-    },
-    {
-      path:'services/small-business', component: SmallBusinessComponent,
-      children: [
-        {
-          path:'litigation-support', component: LitigationSupportComponent
-        }
-      ]
-    },
-    {
-      path:'compilation-reviews', component: CompilationReviewsComponent
-    },
-    {
-      path:'individual-tax', component: IndividualTaxComponent,
-      children: [
-        {
-          path:'irs-representation', component: IrsRepresentationComponent
-        }
-      ]
-    },
-    {
-      path:'non-profit', component: NonProfitComponent,
-      children: [
-        {
-          path:'conflict-of-interest', component: ConflictOfInterestComponent
-        },
-        {
-          path:'form-definitions', component: FormDefinitionsComponent
-        }
-      ]
-    }
-  ]},
 ];
 
 @NgModule({
