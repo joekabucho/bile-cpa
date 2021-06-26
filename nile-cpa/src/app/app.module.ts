@@ -29,6 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { SocialShareComponent } from './components/social-share/social-share.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import {EventEmitterService} from './services/event-emitter.service';
+
 
 const customConfig: ShareButtonsConfig = {
   twitterAccount: 'mera_naam_vvs'
@@ -36,18 +38,18 @@ const customConfig: ShareButtonsConfig = {
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [AppComponent, 
-    NavBarComponent, 
-    HomeComponent, 
-    BlogEditorComponent, 
-    ExcerptPipe, 
-    SlugPipe, 
-    BlogCardComponent, 
-    BlogComponent, 
-    PaginatorComponent, 
-    AuthorProfileComponent, 
-    ScrollerComponent, 
-    CommentsComponent, 
+  declarations: [AppComponent,
+    NavBarComponent,
+    HomeComponent,
+    BlogEditorComponent,
+    ExcerptPipe,
+    SlugPipe,
+    BlogCardComponent,
+    BlogComponent,
+    PaginatorComponent,
+    AuthorProfileComponent,
+    ScrollerComponent,
+    CommentsComponent,
     SocialShareComponent, ContactsComponent],
   imports: [
     BrowserModule,
@@ -68,11 +70,10 @@ const customConfig: ShareButtonsConfig = {
       { path: 'addpost', component: BlogEditorComponent, canActivate: [AuthGuard] },
       { path: 'editpost/:id', component: BlogEditorComponent, canActivate: [AdminAuthGuard] },
       { path: 'page/:pagenum', component: HomeComponent },
-      { path: '**', component: HomeComponent },
       { path: 'contacts', component: ContactsComponent}
     ])
   ],
-  providers: [],
+  providers: [EventEmitterService],
   bootstrap: [AppComponent],
 })
 

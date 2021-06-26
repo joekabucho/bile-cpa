@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AppUser } from 'src/app/models/appuser';
 import { AuthService } from 'src/app/services/auth.service';
 import { CommentService } from 'src/app/services/comment.service';
+import {EventEmitterService} from '../../services/event-emitter.service';
 
 @Component({
   selector: 'app-blog-card',
@@ -25,9 +26,10 @@ export class BlogCardComponent implements OnInit, OnDestroy {
 
   // tslint:disable-next-line: max-line-length
   constructor(
-    private blogService: BlogService, 
-    private snackBarService: SnackbarService, 
-    private route: ActivatedRoute, 
+    private eventEmitterService: EventEmitterService,
+    private blogService: BlogService,
+    private snackBarService: SnackbarService,
+    private route: ActivatedRoute,
     private authService: AuthService,
     private commentService: CommentService) {
       // localStorage.setItem('logIn','true');
@@ -50,10 +52,12 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     );
 
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
-
-    
+ this.firstComponentFunction();
   }
 
+  firstComponentFunction(){
+    this.eventEmitterService.onFirstComponentButtonClick();
+  }
   ngOnDestroy() {
     this.unsubscribes$.next();
     this.unsubscribes$.complete();
