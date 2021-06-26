@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~@ngx-share/button/themes/circles/circles-dark-theme';
+
+body {
+  background-color: #fafafa;
+}
+
+.container {
+  padding-top: 60px;
+}
+
+.snackbar-ribon {
+  color: #ffffff;
+  background: #17a2b8;
+}
