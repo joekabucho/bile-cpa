@@ -17,11 +17,13 @@ export class BlogComponent implements OnInit, OnDestroy {
   postData: Post = new Post();
   postId;
   private unsubscribe$ = new Subject<void>();
+  public showLogIn: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogService,
-    private commentService: CommentService) {
+    private commentService: CommentService)
+     {
     if (this.route.snapshot.params.id) {
       this.postId = this.route.snapshot.paramMap.get('id');
     }
@@ -35,6 +37,7 @@ export class BlogComponent implements OnInit, OnDestroy {
           this.postData = result;
         }
       );
+  
   }
 
   ngOnDestroy() {

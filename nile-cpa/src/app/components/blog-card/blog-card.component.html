@@ -5,7 +5,7 @@
 </ng-template>
 <ng-container *ngIf="blogPost && blogPost.length > 0; else emptyblog">
     <div *ngFor="let post of blogPost | paginate:config">
-        <mat-card class="blog-card mat-elevation-z2">
+        <mat-card class="flex blog-card mat-elevation-z2">
             <mat-card-content>
                 <a class="blog-title" [routerLink]="['/blog/', post.postId, post.title | slug]">
                     <h2>{{post.title}}</h2>

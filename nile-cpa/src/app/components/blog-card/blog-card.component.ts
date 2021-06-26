@@ -21,6 +21,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
   config: any;
   pageSizeOptions = [];
   appUser: AppUser;
+  // public showLogIn: boolean = false;
 
   // tslint:disable-next-line: max-line-length
   constructor(
@@ -29,6 +30,9 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute, 
     private authService: AuthService,
     private commentService: CommentService) {
+      // localStorage.setItem('logIn','true');
+      //  console.log('logIn')
+      // this.showLogIn = true;
     this.pageSizeOptions = [2, 4, 6];
     const pageSize = localStorage.getItem('pageSize');
     this.config = {
@@ -46,6 +50,8 @@ export class BlogCardComponent implements OnInit, OnDestroy {
     );
 
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
+
+    
   }
 
   ngOnDestroy() {

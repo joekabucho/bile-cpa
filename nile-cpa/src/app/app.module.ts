@@ -28,6 +28,7 @@ import { ShareButtonsConfig, ShareModule } from '@ngx-share/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { SocialShareComponent } from './components/social-share/social-share.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 const customConfig: ShareButtonsConfig = {
   twitterAccount: 'mera_naam_vvs'
@@ -47,7 +48,7 @@ const customConfig: ShareButtonsConfig = {
     AuthorProfileComponent, 
     ScrollerComponent, 
     CommentsComponent, 
-    SocialShareComponent],
+    SocialShareComponent, ContactsComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -67,7 +68,8 @@ const customConfig: ShareButtonsConfig = {
       { path: 'addpost', component: BlogEditorComponent, canActivate: [AuthGuard] },
       { path: 'editpost/:id', component: BlogEditorComponent, canActivate: [AdminAuthGuard] },
       { path: 'page/:pagenum', component: HomeComponent },
-      { path: '**', component: HomeComponent }
+      { path: '**', component: HomeComponent },
+      { path: 'contacts', component: ContactsComponent}
     ])
   ],
   providers: [],

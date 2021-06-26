@@ -1,8 +1,8 @@
-<mat-toolbar class="nav-bar mat-elevation-z2">
-    <button mat-button [routerLink]='["/"]'> Nile CPA blog </button>
+<!-- <mat-toolbar class="nav-bar mat-elevation-z2">
+    <button mat-button [routerLink]='["/"]'><img src="../src/assets/images/nile-logo.jpeg" alt="logo" width="182" height="45" /> </button>
     <ng-container *ngIf="appUser">
         <button mat-button [routerLinkActive]='["link-active"]' [routerLink]='["/addpost"]'>
-            Add Post
+            <h6>Add Post</h6>
         </button>
     </ng-container>
     <span class="spacer"></span>
@@ -18,4 +18,58 @@
             <button mat-menu-item (click)=logout()>Logout</button>
         </mat-menu>
     </ng-container>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<section class="navigation">
+    <div class="nav-container">
+        <div class="brand">
+            <a href="#!"><img src="../../../assets/images/nile-logo.jpeg" alt="" srcset=""></a>
+        </div>
+        <nav>
+            <div class="nav-mobile">
+                <a id="nav-toggle" href="#!"><span></span></a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#!">HOME</a></li>
+                <li>
+                    <a href="#!">SERVICES</a>
+
+                </li>
+                <li><a href="#!">ABOUT US</a></li>
+                <li>
+                    <a href="#!">RESOURCES</a>
+
+                </li>
+                <li><a href="#!"><span class="active">BLOG</span></a></li>
+                <li><a routerLink="contacts">CONTACT</a></li>
+                <li [hidden]="showLogIn==false"><a href="#!">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<script>
+    (function($) {
+        $(function() {
+            $('nav ul li > a:not(:only-child)').click(function(e) {
+                $(this)
+                    .siblings('.nav-dropdown')
+                    .slideToggle()
+                $('.nav-dropdown')
+                    .not($(this).siblings())
+                    .hide()
+                e.stopPropagation()
+            })
+            $('html').click(function() {
+                    $('.nav-dropdown').hide()
+                })
+                // Toggle open and close nav styles on click
+            $('#nav-toggle').click(function() {
+                $('nav ul').slideToggle();
+            });
+            $('#nav-toggle').on('click', function() {
+                this.classList.toggle('active')
+            })
+        })
+    })
+</script>

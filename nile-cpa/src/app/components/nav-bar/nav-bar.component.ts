@@ -9,6 +9,7 @@ import { AppUser } from 'src/app/models/appuser';
 })
 export class NavBarComponent implements OnInit {
   appUser: AppUser;
+  public showLogIn: boolean = false;
 
   constructor(private authService: AuthService) { }
 
