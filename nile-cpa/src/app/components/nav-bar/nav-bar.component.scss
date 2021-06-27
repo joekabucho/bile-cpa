@@ -84,28 +84,9 @@ nav {
                 &:hover::before {
                     width: 70%;
                 }
-                &:not(:only-child):after {
-                    padding-left: 4px;
-                    content: ' ▾';
-                    color: #6bc3f0;
-                }
-            } // Dropdown list
-            ul li {
-                min-width: 190px;
-                a {
-                    padding: 15px;
-                    line-height: 20px;
-                }
             }
         }
     }
-}
-
-.nav-dropdown {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-mobile {
@@ -141,9 +122,6 @@ nav {
                 }
             }
         }
-    }
-    .nav-dropdown {
-        position: static;
     }
 }
 
