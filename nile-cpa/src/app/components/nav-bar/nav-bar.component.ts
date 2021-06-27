@@ -28,10 +28,10 @@ export class NavBarComponent implements OnInit {
   }
 
   setTrue() {
-    this.showLogIn =true;
+    this.showLogIn = true;
   }
   setFalse() {
-    this.showLogIn =false;
+    this.showLogIn = false;
   }
   login() {
     this.authService.login();
