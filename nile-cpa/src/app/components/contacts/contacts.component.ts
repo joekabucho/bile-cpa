@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contacts',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+  url = 'https://forms.clickup.com/f/25dbx-1002/3GVPYOE5Q61QL71VHG';
+  urlSafe: SafeResourceUrl;
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.url);
   }
 
 }
