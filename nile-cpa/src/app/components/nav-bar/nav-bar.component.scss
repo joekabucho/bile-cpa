@@ -32,7 +32,7 @@ $link-hover-color: #6bc3f0;
     background: $nav-background;
 }
 
-.active {
+.nav-active {
     color: #6bc3f0;
 }
 
@@ -48,7 +48,6 @@ $link-hover-color: #6bc3f0;
     line-height: $nav-height;
     text-transform: uppercase;
     font-size: 1.4em;
-    &:hover {}
     a,
     a:visited {
         color: $nav-font-color;
