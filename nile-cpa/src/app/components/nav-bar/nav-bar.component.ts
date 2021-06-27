@@ -27,10 +27,10 @@ export class NavBarComponent implements OnInit {
     this.authService.appUser$.subscribe(appUser => this.appUser = appUser);
   }
 
-  setTrue() {
+   setTrue() {
     this.showLogIn = true;
   }
-  setFalse() {
+   setFalse() {
     this.showLogIn = false;
   }
   login() {

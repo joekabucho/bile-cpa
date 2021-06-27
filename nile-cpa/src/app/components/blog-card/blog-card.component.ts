@@ -35,7 +35,7 @@ export class BlogCardComponent implements OnInit, OnDestroy {
       // localStorage.setItem('logIn','true');
       //  console.log('logIn')
       // this.showLogIn = true;
-    this.pageSizeOptions = [2, 4, 6];
+    this.pageSizeOptions = [10, 20, 30, 40, 50, 100];
     const pageSize = localStorage.getItem('pageSize');
     this.config = {
       currentPage: 1,
@@ -78,5 +78,12 @@ export class BlogCardComponent implements OnInit, OnDestroy {
         }
       );
     }
+  }
+  login() {
+    this.authService.login();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
