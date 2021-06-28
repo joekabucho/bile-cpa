@@ -26,6 +26,20 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "aot": false,
+                      "allowedCommonJsDependencies": [
+                        "lodash",
+                        "firebase",
+                        "@angular/common/locales/fr",
+                        "lodash/dropRight",
+                        "@firebase/app",
+                        "firebase/app",
+                        "@firebase/database",
+                        "@firebase/firestore",
+                        "@firebase/auth",
+                        "@firebase/functions",
+                        "@firebase/performance",
+                        "@firebase/remote-config"
+                      ],
                         "assets": [
                             "src/favicon.ico",
                             "src/assets"
@@ -43,7 +57,14 @@
                                 "replace": "src/environments/environment.ts",
                                 "with": "src/environments/environment.prod.ts"
                             }],
-                            "optimization": true,
+                          "optimization": {
+                            "scripts": true,
+                            "styles": {
+                              "minify": false,
+                              "inlineCritical": false
+                            },
+                            "fonts": true
+                          },
                             "outputHashing": "all",
                             "sourceMap": false,
                             "extractCss": true,
