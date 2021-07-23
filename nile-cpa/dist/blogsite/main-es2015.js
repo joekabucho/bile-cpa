@@ -132,7 +132,7 @@ BlogCardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/crystal/bile-cpa/bile-cpa/nile-cpa/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /home/joe/nile-cpa/bile-cpa/nile-cpa/src/main.ts */"zUnb");
 
 
 /***/ }),
